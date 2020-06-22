@@ -1,0 +1,70 @@
+import Web3 from "./web3";
+const address = "0x21EA93AC98E8AC854F1870d184A44e1a224f4B3A";
+const abi = [
+  {
+    constant: false,
+    inputs: [
+      { name: "previous", type: "uint256" },
+      { name: "productName", type: "string" },
+      { name: "date", type: "string" },
+      { name: "username", type: "string" },
+      { name: "location", type: "string" },
+      { name: "temperature", type: "uint256" },
+      { name: "weight", type: "uint256" },
+      { name: "price", type: "uint256" },
+      { name: "required_temperature", type: "uint256" },
+      { name: "required_price", type: "uint256" },
+      { name: "required_previous_time", type: "uint256" },
+    ],
+    name: "createProduct",
+    outputs: [],
+    payable: false,
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    constant: false,
+    inputs: [],
+    name: "getPrr",
+    outputs: [
+      {
+        components: [
+          { name: "previous", type: "uint256" },
+          { name: "creator", type: "address" },
+          { name: "productName", type: "string" },
+          { name: "productId", type: "uint256" },
+          { name: "date", type: "string" },
+          { name: "username", type: "string" },
+          { name: "location", type: "string" },
+          { name: "temperature", type: "uint256" },
+          { name: "weight", type: "uint256" },
+          { name: "price", type: "uint256" },
+          { name: "required_temperature", type: "uint256" },
+          { name: "required_price", type: "uint256" },
+          { name: "required_previous_time", type: "uint256" },
+        ],
+        name: "",
+        type: "tuple[]",
+      },
+    ],
+    payable: false,
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: "size",
+    outputs: [{ name: "", type: "uint256" }],
+    payable: false,
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    payable: false,
+    stateMutability: "nonpayable",
+    type: "constructor",
+  },
+];
+export default new Web3.eth.Contract(abi, address);
